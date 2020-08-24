@@ -5,7 +5,7 @@ const Task = (props) => {
   return (
     <div className='Task'>
       <input id={props.id} type="checkbox" defaultChecked={props.completed} />
-      <label>{props.name}</label>
+      <label tabIndex="0">{props.name}</label>
       <button>X</button>
     </div>
   )

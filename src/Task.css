@@ -1,39 +1,125 @@
 .Task {
   display: grid;
-  grid-template-columns: 1fr 8fr 1fr;
+  grid-template-columns: 2fr 15fr 1fr;
   place-items: stretch stretch;
-  column-gap: 5px;
   border: none;
-}
-
-.Task label {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  text-align: center;
-  border-radius: 4px;
-  font-size: 25px;
-  height: 50px; 
-  width: 100%;
-  background-color: #4d41f0;
-  color:#ffffff;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .Task input[type="checkbox"] {
   text-align: center;
   margin: 0 0 0 0;
-  height: 50px;
+  height: 100%; 
   width: 100%;
 }
-
-.Task button {
-  background-color: rgb(230, 74, 74);
-  color: white;
+.Task label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
   text-align: center;
-  margin-bottom: 8px;
-  border-radius: 4px;
-  font-size: 25px;
+  font-size: 150%;
+  height: 100%; 
+  width: 100%;
+  background-color: #4d41f0;
+  color:#ffffff;
+}
+.Task button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+  font-size: 150%;
+  height: 100%;
+  width: 100%;
+  background-color: #4d41f0;
+  color: white;
   border: none;
+}
+
+.Task button:hover {
+  background: rgb(230, 8, 8);
+}
+.Task label:hover {
+  background: rgb(33, 4, 200);
+}
+.Task input[type="checkbox"]:hover {
+  background: rgb(33, 4, 200);
+}
+
+.Task label:focus {
+  border-width: 4px;
+  outline: 3px dashed #228bec;
+} 
+.Task button:focus {
+  border-width: 4px;
+  outline: 3px dashed #228bec;
+} 
+.Task input[type="checkbox"]:focus {
+  border-width: 4px;
+  outline: 3px dashed #228bec;
+} 
+
+@media (min-width: 400px) {
+  .Task {
+    display: grid;
+    grid-template-columns: 2fr 15fr 1fr;
+    place-items: stretch stretch;
+    border: none;
+    margin-bottom: 10px;
+  }
+  
+  .Task input[type="checkbox"] {
+    text-align: center;
+    margin: 0 0 0 0;
+    height: 50px; 
+    width: 100%;
+  }
+  .Task label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-align: center;
+    font-size: 25px;
+    height: 50px; 
+    width: 100%;
+    background-color: #4d41f0;
+    color:#ffffff;
+  }
+  .Task button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    text-align: right;
+    font-size: 20px;
+    height: 50px;
+    width: 100%;
+    background-color: #4d41f0;
+    color: white;
+    border: none;
+  }
+  
+  .Task button:hover {
+    background: rgb(230, 8, 8);
+  }
+  .Task label:hover {
+    background: rgb(33, 4, 200);
+  }
+  .Task input[type="checkbox"]:hover {
+    background: rgb(33, 4, 200);
+  }
+  
+  .Task label:focus {
+    border-width: 4px;
+    outline: 3px dashed #228bec;
+  } 
+  .Task button:focus {
+    border-width: 4px;
+    outline: 3px dashed #228bec;
+  } 
+  .Task input[type="checkbox"]:focus {
+    border-width: 4px;
+    outline: 3px dashed #228bec;
+  } 
 }

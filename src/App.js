@@ -16,13 +16,13 @@ function App(props) {
 
   return (
     <div className="App">
-      <h1>My ToDo-List</h1>
+      <h1>Just TODO it [✔] </h1>
       <Form 
         className="Form" 
         id={props.id}
         onSubmit={handleSubmit}
       />
-      <h2>{`${tasks.length} tasks remaining`}</h2><br/>
+      <h2 id="list-heading" tabIndex="-1">{`${tasks.length} tasks remaining`}</h2>
       {taskList}
     </div>
   );
