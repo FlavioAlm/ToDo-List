@@ -1,11 +1,11 @@
 import React from 'react'
 import './Task.css'
 
-const Task = () => {
+const Task = (props) => {
   return (
     <div className='Task'>
-      <input type="checkbox"/>
-      <input type="text" value="Here is a task" />
+      <input id={props.id} type="checkbox" defaultChecked={props.completed} />
+      <label>{props.name}</label>
     </div>
   )
 }

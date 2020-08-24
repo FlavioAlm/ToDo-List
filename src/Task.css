@@ -1,24 +1,28 @@
 .Task {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  place-items: stretch stretch;
+  border: none;
 }
 
-.Task input[type="text"] {
+.Task label {
+  display: grid;
+  justify-content: center;
+  align-items: center;
   font-family: Georgia, "Times New Roman", Times, serif;
   text-align: center;
-  border: none;
   border-radius: 4px;
   font-size: 25px;
   height: 50px; 
-  width: 87%;
-  background-color: #2f22e4;
+  width: 100%;
+  background-color: #4d41f0;
   color:#ffffff;
+  margin-bottom: 8px;
 }
 
 .Task input[type="checkbox"] {
   text-align: center;
   margin: 0 0 0 0;
   height: 50px;
-  width: 10%;
+  width: 80%;
 }

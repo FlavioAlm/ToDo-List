@@ -2,16 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const INITIAL_DATA = [
+  { id: "todo-0", name: "Run", completed: true },
+  { id: "todo-1", name: "Code", completed: false },
+  { id: "todo-2", name: "Lunch", completed: false }
+];
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(<App tasks={INITIAL_DATA} />, document.getElementById('root'));
+
