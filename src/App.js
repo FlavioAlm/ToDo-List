@@ -22,6 +22,7 @@ function App(props) {
         id={props.id}
         onSubmit={handleSubmit}
       />
+      <h2>{`${tasks.length} tasks remaining`}</h2><br/>
       {taskList}
     </div>
   );

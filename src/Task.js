@@ -6,6 +6,7 @@ const Task = (props) => {
     <div className='Task'>
       <input id={props.id} type="checkbox" defaultChecked={props.completed} />
       <label>{props.name}</label>
+      <button>X</button>
     </div>
   )
 }
