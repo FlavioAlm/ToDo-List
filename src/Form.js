@@ -7,22 +7,22 @@ function Form (props) {
   function handleChange(e) {
     let taskName = e.target.value;
     setTaskName(taskName);
-    console.log(taskName);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    props.addTask(taskName);
-    setTaskName("");
+    if (taskName === null) return
+    if (taskName !== '') {
+      props.addTask(taskName);
+      setTaskName("");
+    }
   }
 
   return (
     <form className='Form' onSubmit={handleSubmit}>
       <input
-        key="1"
         type='text' 
         placeholder="Your new task"
-        id="1"
         value={taskName}
         onChange={handleChange}
       />

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './App.css'
 import Form from './Form'
 import Task from './Task'
+import Filter from './Filter'
 import { nanoid } from "nanoid"
 
 function App(props) {
@@ -18,7 +19,8 @@ function App(props) {
   }
 
   const taskList = tasks.map( task => (
-     <Task 
+     <Task
+      key={task.id} 
       id={task.id} 
       name={task.name} 
       completed={task.completed}
@@ -33,6 +35,7 @@ function App(props) {
         addTask={addTask} 
         id={props.id}
       />
+      <Filter />
       <h2 id="list-heading" tabIndex="-1">{`${tasks.length} tasks remaining`}</h2>
       {taskList}
     </div>
