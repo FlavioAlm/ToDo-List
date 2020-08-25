@@ -5,7 +5,11 @@ function Task (props) {
 
   return (
     <div className='Task'>
-      <input id={props.id} type="checkbox" defaultChecked={props.completed} />
+      <input 
+        id={props.id} 
+        type="checkbox" 
+        defaultChecked={props.completed}
+        onChange={ () => props.toggleTaskCompleted(props.id)} />
       <label tabIndex="0">{props.name}</label>
       <button onClick={() => props.deleteTask(props.id)}>X</button>
     </div>

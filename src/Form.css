@@ -30,11 +30,11 @@
 }
 
 .Form input[type="text"]:hover {
-  background: rgb(65, 204, 146);
+  background: rgb(124, 230, 186);
   color: black;
 }
 .Form button[type="submit"]:hover {
-  background: rgb(65, 204, 146);
+  background: rgb(124, 230, 186);
 }
   
 .Form input[type="text"]:focus {
