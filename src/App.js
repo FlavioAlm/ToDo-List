@@ -12,8 +12,17 @@ function App(props) {
     setTasks([...tasks, newTask]);
   }
 
+  function deleteTask(taskId) {
+    const remainingTasks = tasks.filter( task => taskId !== task.id);
+    setTasks(remainingTasks);
+  }
+
   const taskList = tasks.map( task => (
-     <Task id={task.id} name={task.name} completed={task.completed} /> 
+     <Task 
+      id={task.id} 
+      name={task.name} 
+      completed={task.completed}
+      deleteTask={deleteTask} /> 
   ));
 
   return (
