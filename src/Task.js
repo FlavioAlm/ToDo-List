@@ -4,15 +4,18 @@ import './Task.css'
 function Task (props) {
 
   return (
-    <div className='Task'>
-      <input 
-        id={props.id} 
-        type="checkbox" 
-        defaultChecked={props.completed}
-        onChange={ () => props.toggleTaskCompleted(props.id)} />
-      <label tabIndex="0">{props.name}</label>
-      <button onClick={() => props.deleteTask(props.id)}>X</button>
-    </div>
+    <>
+      <label className='taskContainer' tabIndex="0">{props.name}
+        <input 
+          id={props.id} 
+          type="checkbox" 
+          defaultChecked={props.completed}
+          onChange={ () => props.toggleTaskCompleted(props.id)} />
+        <span className="checkmark"></span>
+        <button onClick={() => props.deleteTask(props.id)}>⌧</button>
+      </label>
+      <hr/>
+    </>
   )
 }
 

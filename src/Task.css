@@ -1,125 +1,181 @@
-.Task {
-  display: grid;
-  grid-template-columns: 2fr 15fr 1fr;
-  place-items: stretch stretch;
-  border: none;
-  margin-bottom: 10px;
+.taskContainer {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 6px;
+  margin-top: 6px;
+  cursor: pointer;
+  font-size: 20px;
+  opacity: .8;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.Task input[type="checkbox"] {
-  text-align: center;
-  margin: 0 0 0 0;
-  height: 100%; 
-  width: 100%;
+.taskContainer input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
-.Task label {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  text-align: center;
-  font-size: 150%;
-  height: 100%; 
-  width: 100%;
-  background-color: #4d41f0;
-  color:#ffffff;
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  height: 25px; 
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
 }
-.Task button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.taskContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.taskContainer .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #4d41f0;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transition: all .3s;
+}
+
+.taskContainer:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.taskContainer:hover {
+  opacity: 1;
+}
+
+.taskContainer button {
   text-align: right;
-  font-size: 150%;
-  height: 100%;
-  width: 100%;
-  background-color: #4d41f0;
-  color: white;
+  font-size: 100%;
   border: none;
+  background: #89abeb;
 }
 
-.Task button:hover {
+.taskContainer button:hover {
   background: rgb(230, 8, 8);
 }
-.Task label:hover {
-  background: rgb(33, 4, 200);
-}
-.Task input[type="checkbox"]:hover {
+.taskContainer label:hover {
   background: rgb(33, 4, 200);
 }
 
-.Task label:focus {
+.taskContainer label:focus {
   border-width: 4px;
   outline: 3px dashed #228bec;
 } 
-.Task button:focus {
+.taskContainer button:focus {
   border-width: 4px;
   outline: 3px dashed #228bec;
 } 
-.Task input[type="checkbox"]:focus {
+.taskContainer input[type="checkbox"]:focus {
   border-width: 4px;
   outline: 3px dashed #228bec;
 } 
 
 @media (min-width: 400px) {
-  .Task {
-    display: grid;
-    grid-template-columns: 2fr 15fr 1fr;
-    place-items: stretch stretch;
-    border: none;
-    margin-bottom: 10px;
+  .taskContainer {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 6px;
+    margin-top: 6px;
+    cursor: pointer;
+    font-size: 22px;
+    opacity: .8;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
   
-  .Task input[type="checkbox"] {
-    text-align: center;
-    margin: 0 0 0 0;
-    height: 50px; 
-    width: 100%;
+  .taskContainer input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
   }
-  .Task label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    text-align: center;
-    font-size: 25px;
-    height: 50px; 
-    width: 100%;
-    background-color: #4d41f0;
-    color:#ffffff;
+  
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    height: 25px; 
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
   }
-  .Task button {
-    display: flex;
-    justify-content: flex-end;
-    align-items: baseline;
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  .taskContainer input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .taskContainer .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #4d41f0;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition: all .3s;
+  }
+  
+  .taskContainer:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  .taskContainer:hover {
+    opacity: 1;
+  }
+  
+  .taskContainer button {
     text-align: right;
-    font-size: 20px;
-    height: 50px;
-    width: 100%;
-    background-color: #4d41f0;
-    color: white;
+    font-size: 100%;
     border: none;
+    background: #89abeb;
   }
   
-  .Task button:hover {
+  .taskContainer button:hover {
     background: rgb(230, 8, 8);
   }
-  .Task label:hover {
-    background: rgb(33, 4, 200);
-  }
-  .Task input[type="checkbox"]:hover {
+  .taskContainer label:hover {
     background: rgb(33, 4, 200);
   }
   
-  .Task label:focus {
+  .taskContainer label:focus {
     border-width: 4px;
     outline: 3px dashed #228bec;
   } 
-  .Task button:focus {
+  .taskContainer button:focus {
     border-width: 4px;
     outline: 3px dashed #228bec;
   } 
-  .Task input[type="checkbox"]:focus {
+  .taskContainer input[type="checkbox"]:focus {
     border-width: 4px;
     outline: 3px dashed #228bec;
-  } 
+  }
 }

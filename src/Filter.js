@@ -3,7 +3,7 @@ import './Filter.css'
 
 function Filter (props) {
   return (
-    <button className="filter" onClick={()=>props.setFilter(props.name)}>{props.name}</button> 
+    <button className="filterButton" onClick={()=>props.setFilter(props.name)}>{props.name}</button> 
   )
 }
 
