@@ -1,19 +1,19 @@
 import React, { useState } from 'react'
-import Form from './Form'
-import Task from './Task'
-import Filter from './Filter'
+
+import Form from '../components/Form/Form'
+import Task from '../components/Task/Task'
+import Filter from '../components/Filter/Filter'
+
 import { nanoid } from "nanoid"
 
 import './App.css'
-import './Filter.css'
+import '../components/Filter/Filter.css'
 
 const FILTER_MAP = {
   Todo: task => !task.completed,
   Done: task => task.completed,
   All: () => true,
 };
-
-const FILTER_NAMES = Object.keys(FILTER_MAP);
 
 function App(props) {
   const [tasks, setTasks] = useState(props.tasks);
@@ -52,14 +52,6 @@ function App(props) {
     />
   ));
 
-  const filterList = FILTER_NAMES.map(name => (
-    <Filter
-      key={name}
-      name={name}
-      setFilter={setFilter}
-    />
-  ))
-
   return (
     <div className="App">
       <h1>Just TODO it [✔] </h1>
@@ -69,7 +61,7 @@ function App(props) {
         id={props.id}
       />
       <div className="filter">
-        {filterList}
+        <Filter filter={filter} setFilter={setFilter}/>
       </div>
 
       <h2 id="list-heading" tabIndex="-1">{`${taskList.length} tasks remaining`}</h2>

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './view/App';
 
 const INITIAL_DATA = [
   { id: "todo-0", name: "Run", completed: true },
