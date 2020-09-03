@@ -2,6 +2,7 @@ import React from 'react'
 
 import './Task.css'
 import RenderTask from './RenderTask'
+import { TaskCounter } from '../../components'
 
 function Task ({
   tasks, 
@@ -26,9 +27,7 @@ function Task ({
 
   return (
     <>
-      <h2 id="list-heading" tabIndex="-1">
-        {`${taskList.length} tasks remaining`}
-      </h2>
+      <TaskCounter taskListLength={taskList.length} filter={filter} />
       <hr/>
       {taskList}
     </>
