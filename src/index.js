@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './index.css';
-import App from './view/App';
+import App from './App';
 
 const INITIAL_DATA = [
   { id: "todo-0", name: "Run", completed: true },
@@ -10,5 +11,5 @@ const INITIAL_DATA = [
   { id: "todo-3", name: "Fly", completed: false }
 ];
 
-ReactDOM.render(<App tasks={INITIAL_DATA} />, document.getElementById('root'));
+ReactDOM.render(<App INITIAL_DATA={INITIAL_DATA} />, document.getElementById('root'));
 

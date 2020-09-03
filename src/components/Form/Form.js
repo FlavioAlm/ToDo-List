@@ -1,20 +1,18 @@
 import React, { useState } from 'react'
 import './Form.css'
 
-function Form (props) { 
-  const [taskName, setTaskName] = useState('');
+function Form ({addTask}) { 
+  const [taskName, setTaskName] = useState('')
 
   function handleChange(e) {
-    let taskName = e.target.value;
-    setTaskName(taskName);
+    setTaskName(e.target.value)
   }
 
   function handleSubmit(e) {
-    e.preventDefault();
-    if (taskName === null) return
+    e.preventDefault()
     if (taskName !== '') {
-      props.addTask(taskName);
-      setTaskName("");
+      addTask(taskName)
+      setTaskName("")
     }
   }
 
@@ -25,10 +23,11 @@ function Form (props) {
         placeholder="Your new task"
         value={taskName}
         onChange={handleChange}
+        required
       />
       <button type='submit' value="ADD">ADD</button>
     </form>
-  );
+  )
 }
 
 export default Form
