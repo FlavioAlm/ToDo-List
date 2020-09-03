@@ -21,9 +21,9 @@ function Todo({INITIAL_DATA}) {
     setTasks([...tasks, newTask])
   }
 
-  function toggleTaskCompleted(id){
+  function toggleTaskCompleted(taskId){
     const updatedTasks = tasks.map(task => {
-      if (id === task.id) {
+      if (taskId === task.id) {
         return {...task, completed: !task.completed}
       }
       return task
